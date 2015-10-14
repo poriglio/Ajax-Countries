@@ -7,7 +7,14 @@ angular.module("countriesApp").controller("countriesController",["$scope","$http
 	console.log("The script is running.")
 
 	$scope.loadCountries = function(){
-		$http.get("/countries")
+		$http.get("/countries",function(error,data){
+			if(!error){
+				console.log(data.data)
+			}
+			else{
+				console.log("Error!!!")
+			}
+		})
 	}
 
 }])

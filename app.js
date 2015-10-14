@@ -1,3 +1,4 @@
+var countries = require("./models/countries.json")
 var bodyParser = require("body-parser")
 var express = require("express")
 var db = require("mongodb")
@@ -18,8 +19,7 @@ app.get("/",function(request,response){
 })
 
 app.get("/countries",function(request,response){
-	console.log("hi")
-	response.send("It works! Shit is going down!")
+	response.send(countries)
 })
 
 // SET UP SERVER
